@@ -1,0 +1,293 @@
+<html>
+<head>
+<title>login form</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
+  *{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    border-shadow:0px 0px 10px black; 
+  
+  }
+  html{
+    font-size: 70.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+.hero{
+    content:'';
+    height:100%;
+    width: 100%;
+    background: #FBFBFB;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    position:fixed;
+    filter:none;
+   
+  }
+  .form-box{
+    width:400px;
+    height:550px;
+    position:relative;
+    margin:1%auto;
+    padding:5px;
+    overflow:hidden;
+    background-color:#fff;
+    border-radius:20px;
+    box-shadow:0px 0px 1px black;
+    margin-top:5%;
+    font-size: 1.5rem;
+  }
+  .button-box{
+    width:220px;
+    margin:35px auto;
+    position:relative;
+    box-shadow:0 0 20px 9px #d3ad7f;
+    border-radius: 30px;
+  }
+  .toggle-btn{
+    padding:10px 30px;
+    cursor:pointer;
+    background:transparent;
+    border:0;
+    outline: none;
+    position: relative;
+  }
+  #btn{
+      top:0;
+    left:0;
+    position:absolute;
+    width:110px;
+    height:100%;
+    background: linear-gradient(to right,#fff,#d3ad7f);
+    border-radius:30px;
+    transition:.5s;
+  
+  }
+  .input-group
+  {
+    top:100px;
+    position:absolute;
+    width:280px;
+    transition: .5s;
+  }
+  
+  .input-field{
+    width:100%;
+    padding:10px 0;
+    margin:5px 0;
+    border-left:0;
+    border-top:0;
+    border-right:0;
+    border-bottom:1px solid #111;
+    outline:none;
+    background:transparent;
+    color:#111;
+  }
+  .submit-btn{
+    width:85%;
+    padding:10px 30px;
+    cursor:pointer;
+    display:block;
+    margin-left:40px;
+    background:linear-gradient(to right,lightgrey,#d3ad7f );
+    border:0;
+    outline:none;
+    border-radius: 30px;
+  }
+  
+  .chech-box-reg{
+    margin: 30px 10px 30px 0;
+  }
+  
+  span
+  {
+    color:#777;
+    font-size:12px;
+    bottom:65px;
+    position:absolute;
+  
+    }
+  #login{
+  left:50px;
+  }
+  #register{
+  left:450px;
+  }
+  .header .logo img{
+    height: 4rem;
+}
+
+  .field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .frg-pssw{
+   
+  }
+
+.header{
+    background:black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:.5rem 5%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 6rem;
+}
+
+.header .navbar a{
+    margin:0 1.5rem;
+    font-size: 1.6rem;
+    color:#fff;
+}
+
+.header .navbar a:hover{
+    color:#d3ad7f;
+    border-bottom: .1rem solid #d3ad7f;
+    padding-bottom: .5rem;
+}
+
+  
+</style>
+
+<body>
+  <header class="header">
+
+    <a href="#home" class="logo">
+    {% load static%}<img src="{% static "images/logo1.jpg "%}" alt="">
+    </a>
+  
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#menu">menu</a>
+        <a href="#products">products</a>
+        <a href="#review">review</a>
+        <a href="#contact">contact</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+  </header>
+  <div class="hero ">
+    <div class="form-box">
+<div class="button-box">
+   <div id="btn"></div>
+   <button type="button" class="toggle-btn" onclick="logIn()">Sign In</button>
+   <button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+   </div>
+
+
+   <form method="POST" id="login" class="input-group"action="{% url 'website' %}">
+    {% csrf_token %}
+   <div class="input-box">
+  <h3 style="text-align:center;">It's quick and easy</h3>
+   <br><br>
+   <br><br>
+   <input type="text" class="input-field" placeholder="Email Or Mobile Number:"required>
+   </div>
+   
+<input type="password" placeholder="Password:" class="input-field"required="">
+
+<br><br>
+   <button type="Submit" class="submit-btn">Log in</button><br><br>
+
+   
+    <a style=" color:black; padding-top:40px;padding-left:105px;text-decoration:underline; font-size:12px;" href="http://127.0.0.1:8000/forgot/">Forgotten Password?</a>
+    </form>
+   
+   <form method="POST" id="register" class="input-group">
+    {% csrf_token %}
+    <h3 style="text-align:center;">Create a new account</h3>
+<br>
+<input type="text" placeholder="First name:" class="input-field" required="" name="fname">
+<input type="text" placeholder="Surname:" class="input-field" required="" name="sname">
+
+<input type="email" placeholder="Email address:" class="input-field"required="" name="email">
+<input type="number" placeholder="Mobile number:" class="input-field"required="" name="mobile"  >
+<div class="input-icons">
+<input type="password" placeholder="Password:" class="input-field"required="" name="Password" id="password-field">
+ <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+</div><br>
+<INPUT TYPE="Radio" name="Gender" value="Male"> male&nbsp&nbsp
+<INPUT TYPE="Radio" name="Gender" Value="Female"> female&nbsp&nbsp
+<INPUT TYPE="Radio" name="Gender" Value="Others"> custom
+  <br>
+<input type="checkbox" class="chech-box-reg" required=""><span>I agree to the terms & conditions</span>
+
+<button type="Submit" class="submit-btn">Register</button>
+
+   </form>
+   
+      </div>
+      <section class="footer">
+        <a href="https://www.amazon.in/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&nodeId=200545940">Terms And conditions</a>
+    </section>
+   </div>
+  
+  
+   
+   <script>
+   var x=document.getElementById("login");
+   var y=document.getElementById("register");
+   var z=document.getElementById("btn");
+
+     function register(){
+	 x.style.left="-400px";
+	 y.style.left="50px";
+	 z.style.left="110px";
+	 }
+	 function logIn(){
+	 x.style.left="50px";
+	 y.style.left="450px";
+	 z.style.left="0";
+     }
+
+     $(".toggle-password").click(function() {
+
+      $(this).toggleClass("fa-eye fa-eye-slash");
+      var input = $($(this).attr("toggle"));
+      if (input.attr("type") == "password") {
+        input.attr("type", "text");
+      } else {
+        input.attr("type", "password");
+      }
+    });
+     
+</script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffee Shop</title>
+
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Registration</title>
+  </head>
+ <style media="screen">
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+    *{
+        margin:0;
+        padding:0;
+        font-family: 'Roboto', sans-serif;
+        margin:0; padding:0;
+        box-sizing: border-box;
+        outline: none; border:none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: .2s linear;
+        
+      
+      }
+      html{
+        font-size: 70.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 9rem;
+        scroll-behavior: smooth;
+    }
+   
+    .heading{
+        text-align: center;
+        color:#fff;
+        text-transform: uppercase;
+        padding-bottom: 3.5rem;
+        font-size: 4rem;
+    }
+    
+    .heading span{
+        color:#d3ad7f;
+        text-transform: uppercase;
+    }
+        .header{
+        background:black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:.5rem 5%;
+        position: fixed;
+        top:0; left: 0; right: 0;
+        z-index: 1000;
+    }
+    
+    .header .logo img{
+        height: 7rem;
+    }
+    
+    .header .navbar a{
+        margin:0 1.5rem;
+        font-size: 1.6rem;
+        color:#fff;
+    }
+    
+    .header .navbar a:hover{
+        color:#d3ad7f;
+        
+    }
+    .header .icons div{
+        color:#fff;
+        cursor: pointer;
+        font-size: 2.5rem;
+        margin-left: .5rem;
+    }
+    
+    .header .icons div:hover{
+        color:#d3ad7f;
+    }
+    .header .icons .dropbtn {
+        font-size: 15px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      .header .icons .dropbtn:hover {
+        color:#d3ad7f;
+      }
+      .header .icons .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      .header .icons .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 15px 15px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-size: 15px;
+      }
+      
+      .header .icons .dropdown-content a:hover {
+        background-color: #d3ad7f;
+      }
+      
+      .header .icons:hover .dropdown-content {
+        display: block;
+      }
+      .container{
+        margin-top:8%;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .container .form-box .para{
+        padding-top: 1%;
+        font-size: 16px;
+       
+    }
+    .footer{
+        background:#13131A;
+        text-align: center;
+    }
+    
+    .footer .share{
+        padding:1rem 0;
+    }
+    
+    .footer .share a{
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        font-size: 1.5rem;
+        color:#fff;
+        border:border;
+        margin:.3rem;
+        border-radius: 50%;
+    }
+    
+    .footer .share a:hover{
+        background-color: #d3ad7f;
+    }
+    
+    .footer .links{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding:2rem 0;
+        gap:1rem;
+    }
+    
+    .footer .links a{
+        padding:.7rem 2rem;
+        color:#fff;
+        border:border;
+        font-size: 1.5rem;
+    }
+    
+    .footer .links a:hover{
+        background:#d3ad7f;
+    }
+    
+    .footer .credit{
+        font-size: 1.5rem;
+        color:#fff;
+        font-weight: lighter;
+        padding:1.5rem;
+    }
+    
+    .footer .credit span{
+        color:#d3ad7f;
+    }
+    .footer .credit a:hover{
+        text-decoration: underline;
+        color: #d3ad7f;
+    }
+    
+
+ </style>
+
+<body> 
+    <header class="header">
+
+        <a href="http://127.0.0.1:8000/website/" class="logo">
+        {% load static%}<img src="{% static "images/logo2.jpg "%}" alt="">
+        </a>
+      
+        <nav class="navbar">
+            <a href="http://127.0.0.1:8000/website/">home</a>
+            <a href="http://127.0.0.1:8000/website/#about">about</a>
+            <a href="http://127.0.0.1:8000/website/#menu">menu</a>
+            <a href="http://127.0.0.1:8000/website/#products">products</a>
+            <a href="http://127.0.0.1:8000/website/#review">review</a>
+            <a href="http://127.0.0.1:8000/condition/">terms</a>
+            <a href="http://127.0.0.1:8000/privacy/">privacy policy</a>
+        </nav>
+        <div class="icons">
+           <div class="fas fa-user" id="account-btn"><span style="font-size:15px;"> account</span><button class="dropbtn">
+        </button> 
+    </div>
+           <div class="dropdown-content">
+            <a href="http://127.0.0.1:8000/login/">LogIn</a>
+            <a href="http://127.0.0.1:8000/registration/">SignUp</a>
+            
+       </div>
+    </div>
+      </header>
+      <div class="container">
+        <h1 style="text-align: center; font-size:50px;margin-bottom:5%;">Privacy <span style="color:#dda96a ;">Notice</span></h1>
+        <div class="form-box">
+            
+      <form>
+    <h1 style="text-decoration: underline;">Conditions of Use</h1> 
+    <div class="para">
+    <p><h4>Disclaimer:</h4>In the event of any discrepancy or conflict, the English version will prevail over the translation.<br><br>
+
+        The website www.amazon.in ("Amazon.in") is operated by Amazon Seller Services Private Limited ("Amazon" or "us" or "we" or "our"), having its registered office located 8th Floor, Brigade Gateway 26/1 Dr. Rajkumar Road Bangalore – 560055, Karnataka, India. Please read the Conditions of Use document carefully before using the Amazon.in website. By using the Amazon.in website, you signify your agreement to be bound by Amazon's Conditions of Use. Amazon Europe Core SARL, Amazon EU SARL, Amazon Services Europe SARL and Amazon Media EU SARL, all four at 38 avenue John F. Kennedy, L-1855, Luxembourg and Amazon Digital UK Limited of 1 Principal Place, Worship Street, London, EC2A 2FA, UK (together "Amazon Europe") are data controllers of personal information collected and processed through Amazon Services. Details can be found here. As described in our Privacy Notice, we share information with Amazon.com, Inc. and the subsidiaries that Amazon.com, Inc. contrprivols that are either subject to our Privacy Notice or follow practices at least as protective as those described in our Privacy Notice. We also share information with third-party service providers. For example, we use third-party service providers to fulfil orders for products or services, and to deliver packages. For any further details on our security practices please read our Privacy Notice.</p> 
+    
+    <hr>
+    <h1  style="text-decoration: underline;">Conditions Relating to Your Use of Our Site</h1>
+    <p><h4>1. Your Account</h4>If you use the website, you are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer to prevent unauthorised access to your account. You agree to accept responsibility for all activities that occur under your account or password. You should take all necessary steps to ensure that the password is kept confidential and secure and should inform us immediately if you have any reason to believe that your password has become known to anyone else, or if the password is being, or is likely to be, used in an unauthorised manner. Please ensure that the details you provide us with are correct and complete and inform us immediately of any changes to the information that you provided when registering. You can access and update much of the information you provided us with in the Your Account area of the website. You agree and acknowledge that you will use your account on the website to purchase products only for your personal use and not for business purposes. Should you wish to order products for business purposes, please create a business account on Amazon.in/business. Amazon.in reserves the right to refuse access to the website, terminate accounts, remove or edit content at any time without notice to you.</p>
+    <p><h4>2. Privacy</h4>
+
+Please review our Privacy Notice, which also governs your visit to Amazon.in, to understand our practices. The personal information / data provided to us by you during the course of usage of Amazon.in will be treated as strictly confidential and in accordance with the Privacy Notice and applicable laws and regulations. If you object to your information being transferred or used, please do not use the website.</p>
+<br>
+<p><h4>3. Reviews, comments, communications and other content</h4>
+
+    Users of this website may post reviews, comments and other content; send communications; and submit suggestions, ideas, comments, questions, or other information, as long as the content is not illegal, obscene, abusive, threatening, defamatory, invasive of privacy, infringing of intellectual property rights, or otherwise injurious to third parties, or objectionable and does not consist of or contain software viruses, political campaigning, commercial solicitation, chain letters, mass mailings, or any form of "spam." In the event a user uses a false e-mail address, impersonates any person or entity, or otherwise misleads as to the origin of any content. Amazon.in reserves the right (but not the obligation) to remove, refuse, delete or edit any content that in the sole judgement of Amazon.in violates these Conditions of use and, or terminate your permission to access or use this website.
+    
+    If you do post content or submit material, and unless we indicate otherwise, you
+    
+    
+    (a) grant Amazon Seller Services Private Limited and its affiliates a non-exclusive, royalty-free, irrevocable, perpetual and fully sublicensable rights to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such content throughout the world in any media; and
+    (b) Amazon Seller Services Private Limited and its affiliates and sublicensees the right to use the name that you submit in connection with such content, if they choose.
+    You agree that the rights you grant above are irrevocable during the entire period of protection of your intellectual property rights associated with such content and material. You agree to waive your right to be identified as the author of such content and your right to object to derogatory treatment of such content. You agree to perform all further acts necessary to perfect any of the above rights granted by you to Amazon Seller Services Private Limited, including the execution of deeds and documents, at its request.
+    
+    You represent and warrant that you own or otherwise control all of the rights to the content that you post or that you otherwise provide on or through the website; that, as at the date that the content or material is submitted to Amazon.in: (i) the content and material is accurate; (ii) use of the content and material you supply does not breach any applicable Amazon.in policies or guidelines and will not cause injury to any person or entity (including that the content or material is not defamatory); (iii) the content is lawful. You agree to indemnify Amazon Seller Services Private Limited and its affiliates for all claims brought by a third party against it or its affiliates arising out of or in connection with a breach of any of these warranties.
+    
+    Back to Top
+    <br>
+    <h4>4. Claims against Objectionable Content</h4>
+    
+    You can refer to the product detail page on Amazon.in for checking any product details provided by the seller regarding the following:
+    
+    the total price in single figure of any good or service, along with the breakup price for the good or service, showing all the compulsory and voluntary charges such as delivery charges, postage and handling charges, conveyance charges and the applicable tax, as applicable. These details are available on the invoice issued to you. To understand how to generate an invoice you can refer here.
+    mandatory notices and information provided by applicable laws, and the expiry date of the good being offered for sale, where applicable; .
+    goods and services offered for sale by the seller including country of origin which are necessary for enabling the consumer to make an informed decision at the pre-purchase stage.
+    importer and the guarantees related to the authenticity or genuineness of the imported products; and.
+    guarantees or warranties applicable to such goods or services. .Further, all contractual information required to be disclosed by law is incorporated as part of the Amazon Services Business Solutions Agreement (BSA) executed by each seller on Amazon.in, prior to listing its products. A copy of the BSA is available here.
+    Because Amazon.in lists millions of products for sale offered by sellers on the website and hosts many thousands of comments, it is not possible for us to be aware of the contents of each product listed for sale, or each comment or review that is displayed. Accordingly, Amazon.in operates on a "notice and takedown" basis. If you believe that any content on the website is illegal, offensive (including but not limited to material that is sexually explicit content or which promotes racism, bigotry, hatred or physical harm), deceptive, misleading, abusive, indecent, insulting or harassing, blasphemous, defamatory, libelous, obscene, pornographic, paedophilic, invasive of another’s privacy or menacing; ethnically objectionable, disparaging; or in breach of a third party’s confidential, proprietary information or right; or is otherwise injurious to third parties; or relates to or promotes money laundering or gambling; or is harmful to minors in any way; or impersonates another person; or threatens the unity, integrity, defence, security or sovereignty of India or friendly relations with foreign States, or public order, or causes incitement to the commission of any cognisable offence or prevents investigation of any offence or in insulting other nation; or objectionable or otherwise unlawful in any manner whatsoever; or which consists of or contains software viruses or any other computer code, file or program designed to interrupt, destroy or limit the functionality of any computer resource; or is patently false and untrue (" Objectionable Content "), please notify us immediately by following our Notice and Procedure for Making Claims of Right Infringements. Once this procedure has been followed, Amazon.in will make all reasonable endeavours to remove such Objectionable Content complained about within a reasonable time.
+    
+    Back to Top
+    
+    <br>
+    <h4>5. Copyright, authors' rights and database rights</h4>
+    All content included on the website, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of Amazon Seller Services Private Limited, its affiliates or its content suppliers and is protected by India and international copyright, authors' rights and database right laws. The compilation of all content on this website is the exclusive property of Amazon Seller Services Private Limited and its affiliates and is protected by laws of India and international copyright and database right laws. All software used on this website is the property of Amazon Seller Services Private Limited, its affiliates or its software suppliers and is protected by India and international copyright and author' rights laws.
+    
+    You may not systematically extract/ or re-utilise parts of the contents of the website without Amazon Seller Services Private Limited and / or its affiliate's (as may be applicable) express written consent. In particular, you may not utilise any data mining, robots, or similar data gathering and extraction tools to extract (whether once or many times) for re-utilisation of any substantial parts of this website, without Amazon Seller Services Private Limited and / or its affiliate's (as may be applicable) express written consent. You may also not create and/ or publish your own database that features substantial (eg: prices and product listings) parts of this website without Amazon Seller Services Private Limited and / or its affiliate's (as may be applicable) express written consent.
+    
+    Back to Top</p>
+</div>
+</form>
+<br>
+</div>
+</div>
+
+    
+<div class="footer">
+    <div class="share">
+        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+        <a href="https://twitter.com/explore" class="fab fa-twitter"></a>
+        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/feed/" class="fab fa-linkedin"></a>
+        <a href="https://in.pinterest.com/" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="links">
+        <a href="http://127.0.0.1:8000/website/">home</a>
+        <a href="http://127.0.0.1:8000/website/#about">about</a>
+        <a href="http://127.0.0.1:8000/website/#menu">menu</a>
+        <a href="http://127.0.0.1:8000/website/#products">products</a>
+        <a href="http://127.0.0.1:8000/website/#review">review</a>
+        <a href="http://127.0.0.1:8000/condition/">terms</a>
+        <a href="http://127.0.0.1:8000/privacy/">privacy policy</a>
+    </div>
+
+    <div class="credit">created by <a href="https://www.instagram.com/sidhantswapnil/"><span>Sidhant Swapnil</span></a> | Enjoy Your coffee</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}  
+    <script src="{% static '/js/script.js' %}"></script>
+</body>
+</html>
